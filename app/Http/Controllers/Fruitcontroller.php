@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Fruit;
-
+use App\models\Book;
 class FruitController extends Controller
 {
     public function getFruit()
@@ -48,4 +48,9 @@ class FruitController extends Controller
         $fruit = Fruit::all();
         return view("fruit", compact('fruit'));
     }
+    public function index(){
+        return Fruit::find(1)->with('book:id,');
+    }
+  
 }
+

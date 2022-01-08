@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fruit-m extends Model
+class Fruit extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+ function book(){
+    return $this->hasone("App\Models\Book");
+}
+
 }

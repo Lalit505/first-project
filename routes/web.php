@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\controllers\Fruitcontroller;
 use App\Http\controllers\furniturecontroller;
+use App\Http\controllers\user;
+use App\Http\Controllers\Teachercontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,3 +69,8 @@ Route::post("/furniture",[FurnitureController::class,"addfurniture"])->name("Fur
 Route::put("/furniture/{id}",[Furniturecontroller::class,"update"])->name('update-furniture');
 Route::get("/delete/{id}",[Furniturecontroller::class,"delete"])->name("delete-furniture");
 Route::get("edit/{id}",[App\Http\controllers\FurnitureController::class,"editfurniture"])->name('edit-furniture');
+Route::post("/user",[user::class,"userlogin"]);
+Route::view("login","login");
+Route::get("data",[Fruitcontroller::class,"index"]);
+Route::get("data",[Teachercontroller::class,"index"]);
+
